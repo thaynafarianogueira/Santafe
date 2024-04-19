@@ -14,52 +14,30 @@
 </head>
 <body>
     <header id="image-header">
-        <nav id="navbar">
-            <img id="logo-header" src="logos/Color logo - no background.png" alt="">
-
-            <ul id="nav-list" >
-                <li class="nav-item active">
-                    <a href="">HOME</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#services">SERVICES</a>
-                </li>
-                <li class="nav-item">
-                    <a href="">ABOUT US </a>
-                </li>
-                <li class="nav-item">
-                    <a href="">PROJECTS</a>
-                </li>
-                <li class="nav-item">
-                    <a href="">CONTACT US</a>
-                </li>
-            </ul>
-
-            <button id="mobile-btn">
-                <i class="fa-solid fa-bars"></i>
-            </button>
-        </nav>
-          
-        <div id="mobile-menu">
-
-            <ul id="mobile-nav-list" >
-                <li class="nav-item">
-                    <a href="">HOME</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#services">SERVICES</a>
-                </li>
-                <li class="nav-item">
-                    <a href="">ABOUT US </a>
-                </li>
-                <li class="nav-item">
-                    <a href="">PROJECTS</a>
-                </li>
-                <li class="nav-item">
-                    <a href="">CONTACT US</a>
-                </li>
-            </ul>
-          </div>
+        <div class="topnav" id="myTopnav">
+            <img class="logo-header" src="logos/Color logo - no background.png" alt="" srcset="">
+           <a href="#home" class="active"></a>
+           <a href="#contact">HOME</a>
+           <div class="dropdown">
+             <button class="dropbtn">SERVICES
+              
+             </button>
+             <div class="dropdown-content">
+               <a href="#">KITECHENS/BATHROOMS</a>
+               <a href="#">ADDITIONS</a>
+               <div class="dropdown-content">
+                 <a href="#">CONCRETE CONSTRUCTIONS</a>
+                 <a href="#">WATERLANDSCASPES</a>
+                 <a href="#">OUTDOORS</a>
+                 <a href="#">ROOFS</a>
+               </div>
+              
+             </div>
+           </div>
+           <a href="#contact">ABOUT US</a>
+           <a href="#about">PROJECTS</a>
+           <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
+         </div>
 
           <div id="text-header">
             
@@ -73,6 +51,58 @@
         </div>
 
     </header>
+
+    <form action="#">
+        <div class="input-group">
+            
+            <div class="group-box-one">
+                <div class="input-box">
+                    <label for="fullName"></label>
+                    <input id="fullName" type="text" name="fullName" placeholder="Full Name" required>
+                </div>
+                
+                <div class="input-box">
+                    <label for="yourAddress"></label>
+                    <input id="yourAddress" type="text" name="yourAddress" placeholder="Your Address" required>
+                </div> 
+                
+               
+            </div>
+                <div class="box-mgs">
+                    <div class="input-box">
+                        <label for="msg"></label><br>
+                        <textarea id="msg" name="msg" rows="4" cols="50" placeholder="How can we help?"></textarea>
+                    </div>
+                </div>
+                <button>Send Your Information</button>
+
+            <div class="group-box-two"> 
+                <div class="box-zip-phone">
+                <div class="input-box">
+                    <label for="phoneNumber"></label>
+                    <input id="phoneNumber" type="tel" name="PhoneNumber" placeholder="Phone Number" required>
+                </div>
+                <div class="input-box">
+                    <label for="email"></label>
+                    <input id="email" type="email" name="email" placeholder="e-mail" required>
+                </div>
+                
+                <div class="input-box">
+                    <label for="chooseService"></label>
+                    <select id="chooseService" name="chooseService"  >
+                        <option value="Choose a Service">How did you find out Santa Fe? |</option>
+                        <option value="SP">SP</option>
+                        <option value="RJ">RJ</option>
+                        <option value="PB">PB</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        
+        <div class="send-button">
+            <button><a href="#">Send</a> </button>
+        </div>
+    </form>
            
     <div class="nav-container-about">
                 <img id="logo-header" src="" alt="">

@@ -1,12 +1,19 @@
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
+
+
 var currentIndex = 0;
 var items = $('.carousel-item');
 var totalItems = items.length;
 
 $(document).ready(function () {
-  $('#mobile-btn').on('click', function () {
-    $('#mobile-menu').toggleClass('active');
-    $('#mobile-btn').find('i').toggleClass('fa-x');
-  });
+  
 
   $('.carousel-control').click(function () {
     var direction = $(this).hasClass('prev') ? -1 : 1;
@@ -41,6 +48,8 @@ function updateCarousel() {
   var leftValue = -currentIndex * 100 + '%';
   $('.carousel-inner').css('transform', 'translateX(' + leftValue + ')');
 }
+
+
 
 
 

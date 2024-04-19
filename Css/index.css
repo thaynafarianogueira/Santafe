@@ -17,6 +17,8 @@
     font-family: Barlow-extralight;
 }
 
+
+
 .btn {
     display: inline-block;
     font-weight: 400;
@@ -43,76 +45,140 @@ header {
     height: 95dvh;
 }
 
-#navbar {
-    width: 100%;
+.logo-header{
+    display: flex;
+ 
+    width: 40%;
+ }
+ .topnav {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-
-}
-
-#logo-header {
-    width: 40%;
-}
-
-#nav-list {
-    display: flex;
-    gap: 25px;
-    list-style: none;
-}
-
-.nav-item a {
-    font-size: 20px;
-    text-decoration: none;
-    color: #ffff;
-}
-
-.nav-item a:hover {
-    color: #986B30;
-    border-bottom: 4px solid #F1BD36;
-    transition: .6s;
-    cursor: pointer;
-}
-
-#mobile-btn {
-    border: none;
-    color: #F1BD36;
+    justify-content: space-evenly;
     background-color: transparent;
+    overflow: hidden;
+  }
+  
+  /* Style the links inside the navigation bar */
+  .topnav a {
+    float: left;
+    display: block;
+    color: #f3f3f3;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 20px;
+ 
+  }
+ 
+  
+  /* Add an active class to highlight the current page */
+  .active {
+    color: white;
+  }
+  
+  /* Hide the link that should open and close the topnav on small screens */
+  .topnav .icon {
     display: none;
-    font-size: 1.5rem;
-    cursor: pointer;
-}
-
-#mobile-menu {
+  }
+  
+  /* Dropdown container - needed to position the dropdown content */
+  .dropdown {
+    float: left;
+    overflow: hidden;
+  }
+  
+  /* Style the dropdown button to fit inside the topnav */
+  .dropdown .dropbtn {
+    font-size: 20px;
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+ 
+  }
+  
+  /* Style the dropdown content (hidden by default) */
+  .dropdown-content {
     display: none;
-}
-
-@media screen and (max-width: 1000px) {
-    #nav-list {
-        display: none;
+    position: absolute;
+    background-color: transparent;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  /* Style the links inside the dropdown */
+  .dropdown-content a {
+    float: none;
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+  
+  /* Add a dark background on topnav links and the dropdown button on hover */
+  .topnav a:hover, .dropdown:hover .dropbtn {
+    border-bottom: 1px solid #F1BD36;
+    color:#F1BD36;
+  }
+  
+  /* Add a grey background to dropdown links on hover */
+  .dropdown-content a:hover {
+    background-color: #F1BD36;
+    color: black;
+  }
+  
+  /* Show the dropdown menu when the user moves the mouse over the dropdown button */
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+  /* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
+  @media screen and (max-width: 864px) {
+    .topnav a:not(:first-child), .dropdown .dropbtn {
+      display: none;
     }
-
-    #mobile-btn {
-        display: block;
+    .topnav{
+       display: flex;
+       flex-direction: column;
     }
-
-    #mobile-menu.active {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+    .topnav a.icon {
+      float:right ;
+      display: block;
     }
-
-    #mobile-nav-list {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-        list-style: none;
+   
+    .logo-header{
+       width: 60%;
     }
-
-    #logo-header {
-        width: 40%;
+ 
+  }
+  
+  /* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
+  @media screen and (max-width: 864px) {
+    .topnav.responsive {position: relative;}
+    .topnav.responsive a.icon {
+      position: absolute;
+      right: 0;
+      top: 0;
     }
-}
+    .topnav.responsive a {
+      float: none;
+      display: block;
+      text-align: left;
+    }
+    .topnav.responsive .dropdown {float: none;}
+    .topnav.responsive .dropdown-content {position: relative;}
+    .topnav.responsive .dropdown .dropbtn {
+      display: block;
+      width: 100%;
+      text-align: left;
+    }
+  }
+
 
 #text-header {
 
@@ -160,70 +226,13 @@ header {
     cursor: pointer;
 }
 
-
-#services {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-
-
-    overflow: hidden;
-    width: 97%;
-    height: 616px;
+.input-group{
+   
+   text-align: center;
 }
 
-#content-services {
 
-    height: 600px;
-
-    margin-left: 15px;
-}
-
-#text-service {
-    border-left: 22px solid #F1BD36;
-    padding-left: 10px;
-    margin-left: 55px;
-
-
-}
-
-.title-two-services {
-    color: #A2A2A2;
-    font-weight: 200;
-    font-size: max(15px, 2vw);
-
-}
-
-.title-services {
-    font-weight: 500;
-    font-size: max(35px, 4vw);
-    margin-top: 40px;
-
-}
-
-#text-box-services {
-    display: flex;
-    align-items: flex-end;
-    flex-direction: column;
-    margin-left: 60px;
-    margin-top: 40px;
-
-    line-height: 35px;
-    font-size: max(5px, 1.5vw);
-    font-family: LoraR;
-    font-weight: 200;
-}
-
-#btn-services {
-    font-size: 25px;
-    width: 250px;
-    background-color: #F1BD36;
-    color: #ffff;
-    border: none;
-    padding: 9px;
-}
-
-.image-bg-services {
+.image-bg-services-residencial {
     background-image: url(../image/section-bg-01.jpg);
     background-position: right right;
     background-size: cover;
@@ -232,18 +241,7 @@ header {
 }
 
 
-#images-content-services {
-    display: flex;
-    flex-direction: row-reverse;
-    align-items: flex-end;
-    margin-left: 25px;
 
-}
-
-#image-two {
-    position: relative;
-    left: 100px;
-}
 
 #about-us-container {
     width: 100%;
@@ -568,91 +566,14 @@ header {
 }
 
 
-.image-tell-us {
-    background-image: url(../image/form-bckg.png);
-    background-size: cover;
-    background-repeat: no-repeat;
-}
 
 
-.tell-us {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
-    width: 100%;
-}
-
-.text-tell-us {
-    font-size: 25px;
-    color: white;
-}
-
-.text-tell-us small {
-    color: #646363;
-
-}
-
-.title-tell-us {
-    color: white;
-    font-size: 9px;
-    margin-left: 10px;
-}
-
-.input-group {
-    display: flex;
 
 
-}
 
-.group-box-one input {
-    width: 350px;
-    margin: 10px;
 
-}
 
-.group-box-two input {
-    margin: 10px;
-}
 
-.input-box select {
-    padding: 5px;
-    border: none;
-    border-radius: 10px;
-    box-shadow: 1px 1px 6px #0000001c;
-    font-size: 1rem;
-    margin-top: 9px;
-    margin-left: 8px;
-}
-
-.input-box input {
-
-    padding: 8px;
-    border: none;
-    border-radius: 10px;
-    box-shadow: 1px 1px 6px #0000001c;
-    font-size: 0.8rem;
-}
-
-.input-group-three {
-    display: flex;
-    margin-left: 14px;
-}
-
-.box-zip-phone input {
-    margin-top: 20px;
-
-}
-
-.input-box textarea {
-    padding: 8px;
-    border: none;
-    border-radius: 10px;
-    box-shadow: 1px 1px 6px #0000001c;
-    font-size: 0.9rem;
-    margin-left: 10px;
-
-}
 
 .send-button button {
     position: relative;
